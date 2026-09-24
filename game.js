@@ -9,7 +9,7 @@
 
   // ---- World constants (logical units; the world is always 640 tall) ----
   const H = 640;
-  const MAX_W = 900;
+  let MAX_W = 900;
   const SURFACE = 34;
   const FLOOR = H - 58;
   const PW = 78;            // pillar width
@@ -870,7 +870,11 @@
   document.addEventListener('visibilitychange', () => { last = performance.now(); });
   window.addEventListener('resize', resize);
 
-  if (location.hash === '#debug') window.whaleJail = { state, step: (n) => { for (let i = 0; i < n; i++) update(1 / 60); render(); } };
+  if (location.hash === '#debug') window.whaleJail = {
+    state, drawWhale,
+    step: (n) => { for (let i = 0; i < n; i++) update(1 / 60); render(); },
+    setMaxWidth: (w) => { MAX_W = w; resize(); },
+  };
   if (state.best > 0) $('title-best').textContent = `Your best: ${state.best}`;
   resize();
   initFish();

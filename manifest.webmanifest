@@ -1,0 +1,16 @@
+{
+  "name": "Whale Jail",
+  "short_name": "Whale Jail",
+  "description": "A Flappy Bird–style game from the story of Jonah: swim the great fish through the deep.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#021526",
+  "theme_color": "#062a4a",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

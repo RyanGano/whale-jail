@@ -28,4 +28,8 @@ python -m http.server 8123
 
 Then open http://localhost:8123. Add `#debug` to the URL to get `window.whaleJail` (game state plus a manual `step(frames)` function).
 
+## Link preview and icons
+
+When the game's link is pasted into a message, the preview uses the Open Graph tags in `index.html` and shows `og.jpg`. The card and the app icons (`icon-*.png`, `apple-touch-icon.png`) are drawn from the game's own art by [tools/share-images.js](tools/share-images.js); the comment at the top explains how to run it. Link apps cache the image by its address, so a new card needs a new filename.
+
 Scripture quotations are from the King James Version (public domain).
