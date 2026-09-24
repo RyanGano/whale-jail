@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Whale Jail</title>
+  <meta name="description" content="Swim a whale through the deep in this Flappy Bird–style game inspired by Jonah and the great fish.">
+  <meta name="theme-color" content="#062a4a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Whale Jail">
+  <meta property="og:description" content="Swim the great fish through the deep. How far can you get?">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Nunito:wght@600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="stage">
+    <canvas id="game" aria-label="Whale Jail game area"></canvas>
+
+    <section id="title" class="overlay" aria-labelledby="title-heading">
+      <div class="card">
+        <p class="eyebrow">A tale from the deep</p>
+        <h1 id="title-heading">Whale Jail</h1>
+        <blockquote class="verse">
+          <p>“Now the LORD had prepared a great fish to swallow up Jonah. And Jonah was in the belly of the fish three days and three nights.”</p>
+          <cite>Jonah 1:17 (KJV)</cite>
+        </blockquote>
+        <button id="start" class="btn primary" type="button">Dive in</button>
+        <p class="hint">Tap, click, or press Space to swim upward. Stay clear of the pillars and the sea floor.</p>
+        <p class="best" id="title-best"></p>
+      </div>
+    </section>
+
+    <section id="over" class="overlay" aria-labelledby="over-title" hidden>
+      <div class="card">
+        <h2 id="over-title"></h2>
+        <div class="scores">
+          <div><span class="label">Score</span><span id="over-score" class="num">0</span></div>
+          <div><span class="label">Best</span><span id="over-best" class="num">0</span></div>
+        </div>
+        <p id="new-best" class="badge" hidden>New best!</p>
+        <blockquote class="verse">
+          <p id="over-verse"></p>
+          <cite id="over-ref"></cite>
+        </blockquote>
+        <div class="actions">
+          <button id="share" class="btn" type="button">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 8 5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>
+            Share score
+          </button>
+          <button id="again" class="btn primary" type="button">Swim again</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
